@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kamal Hotspot</title>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;
+ min-height:100vh;
+ background:#0b0e16;
+ color:#f5f6fa;
+ font-family:Arial,Tahoma,sans-serif;
+ background-image:
+ linear-gradient(#ffffff06 1px,transparent 1px),
+ linear-gradient(90deg,#ffffff06 1px,transparent 1px);
+ background-size:90px 90px;
+}
+.wrap{
+ max-width:440px;
+ margin:65px auto;
+ padding:35px 26px;
+ background:#161922;
+ border:2px solid #292d3b;
+ border-radius:30px;
+ box-shadow:0 20px 55px #0008;
+}
+h1{text-align:center;font-size:26px;margin:0 0 25px}
+.notice{
+ background:#1d2537;
+ border:2px solid #273c64;
+ border-radius:14px;
+ color:#9cbdfd;
+ padding:22px;
+ text-align:center;
+ font-size:17px;
+ line-height:1.8;
+}
+.login{
+ display:flex;
+ direction:ltr;
+ margin-top:25px;
+ border:2px solid #303441;
+ border-radius:14px;
+ overflow:hidden;
+ background:#20242f;
+}
+.prefix{
+ padding:20px;
+ background:#292f40;
+ color:#619bff;
+ font-size:20px;
+ letter-spacing:2px;
+}
+input{
+ min-width:0;
+ flex:1;
+ border:0;
+ outline:0;
+ background:transparent;
+ color:white;
+ padding:18px;
+ font-size:18px;
+}
+button{
+ cursor:pointer;
+ font-family:inherit;
+}
+.connect{
+ width:100%;
+ margin-top:35px;
+ padding:20px;
+ border:0;
+ border-radius:13px;
+ background:linear-gradient(110deg,#4c91f5,#8056ff);
+ color:white;
+ font-size:23px;
+ font-weight:bold;
+ box-shadow:0 10px 30px #496cff33;
+}
+.connect:active{transform:scale(.98)}
+hr{
+ border:0;
+ border-top:1px solid #30333c;
+ margin:35px 0 25px;
+}
+h2{
+ text-align:center;
+ color:#7d8190;
+ font-size:16px;
+ letter-spacing:3px;
+ margin-bottom:25px;
+}
+.plan{
+ background:#20232e;
+ border:2px solid #303441;
+ border-radius:20px;
+ padding:25px 18px;
+ display:flex;
+ align-items:center;
+ gap:15px;
+ direction:ltr;
+ min-height:135px;
+}
+.wifi{
+ background:#1d393d;
+ padding:17px;
+ border-radius:16px;
+ font-size:29px;
+}
+.info{flex:1}
+.info strong{font-size:23px}
+.info p{
+ margin:6px 0 0;
+ color:#a3a7b4;
+ line-height:1.5;
+}
+.price{
+ color:#648cff;
+ font-size:24px;
+ font-weight:bold;
+ white-space:nowrap;
+}
+.price small{font-size:13px}
+.nav{
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ margin-top:18px;
+}
+.arrow{
+ background:#20232d;
+ color:#a9b0c2;
+ border:1px solid #383d4a;
+ border-radius:10px;
+ width:43px;
+ height:43px;
+ font-size:25px;
+}
+.dots{display:flex;gap:7px}
+.dot{
+ width:9px;height:9px;
+ border-radius:50%;
+ background:#303645;
+}
+.dot.active{background:#4d91ff}
+#message{
+ text-align:center;
+ margin-top:15px;
+ font-size:14px;
+ min-height:20px;
+}
+@media(max-width:480px){
+ .wrap{margin:35px 15px;padding:30px 20px}
+ .plan{padding:20px 12px;gap:10px}
+ .price{font-size:21px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<h1>Kamal Hotspot</h1>
+
+<div class="notice">
+Please log in to use the hotspot service.
+</div>
+
+<div class="login">
+ <div class="prefix">AVK-</div>
+ <input id="userId"
+ placeholder="Enter your ID"
+ autocomplete="off">
+</div>
+
+<button class="connect" onclick="connect()">
+Connect
+</button>
+
+<div id="message"></div>
+
+<hr>
+
+<h2>AVAILABLE PLANS</h2>
+
+<div class="plan">
+ <div class="wifi">📶</div>
+ <div class="info">
+  <strong id="planName">3 GB</strong>
+  <p id="planDetails">3 Mbps · Valid 30 days</p>
+ </div>
+ <div class="price" id="planPrice">
+  60<small> AFN</small>
+ </div>
+</div>
+
+<div class="nav">
+ <button class="arrow" onclick="nextPlan()">❯</button>
+ <div class="dots" id="dots"></div>
+ <button class="arrow" onclick="prevPlan()">❮</button>
+</div>
+</div>
+
+<script>
+const plans=[
+ {name:"1 GB",speed:"2 Mbps",days:7,price:25},
+ {name:"3 GB",speed:"3 Mbps",days:30,price:60},
+ {name:"5 GB",speed:"4 Mbps",days:30,price:100},
+ {name:"10 GB",speed:"5 Mbps",days:30,price:180}
+];
+
+let current=1;
+
+function showPlan(){
+ const p=plans[current];
+ document.getElementById("planName").textContent=p.name;
+ document.getElementById("planDetails").textContent=
+ p.speed+" · Valid "+p.days+" days";
+ document.getElementById("planPrice").innerHTML=
+ p.price+"<small> AFN</small>";
+
+ document.getElementById("dots").innerHTML=
+ plans.map((_,i)=>
+ '<span class="dot '+(i===current?'active':'')+'"></span>'
+ ).join("");
+}
+
+function nextPlan(){
+ current=(current+1)%plans.length;
+ showPlan();
+}
+
+function prevPlan(){
+ current=(current-1+plans.length)%plans.length;
+ showPlan();
+}
+
+function connect(){
+ const id=document.getElementById("userId").value.trim();
+ const msg=document.getElementById("message");
+
+ if(!/^[a-zA-Z0-9_-]+$/.test(id)){
+  msg.style.color="#ff7777";
+  msg.textContent="لطفاً کد معتبر خود را وارد کنید.";
+  return;
+ }
+
+ msg.style.color="#ffcb72";
+ msg.textContent=
+ "کد AVK-"+id+
+ " دریافت شد. اتصال واقعی هنوز فعال نیست.";
+}
+
+showPlan();
+</script>
+</body>
+</html>
