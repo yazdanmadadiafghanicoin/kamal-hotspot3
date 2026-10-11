@@ -3,257 +3,95 @@
 <html lang="fa" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Kamal Hotspot</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071a2d">
+<title>کمال هات‌اسپات</title>
 <style>
 *{box-sizing:border-box}
-body{
- margin:0;
- min-height:100vh;
- background:#0b0e16;
- color:#f5f6fa;
- font-family:Arial,Tahoma,sans-serif;
- background-image:
- linear-gradient(#ffffff06 1px,transparent 1px),
- linear-gradient(90deg,#ffffff06 1px,transparent 1px);
- background-size:90px 90px;
-}
-.wrap{
- max-width:440px;
- margin:65px auto;
- padding:35px 26px;
- background:#161922;
- border:2px solid #292d3b;
- border-radius:30px;
- box-shadow:0 20px 55px #0008;
-}
-h1{text-align:center;font-size:26px;margin:0 0 25px}
-.notice{
- background:#1d2537;
- border:2px solid #273c64;
- border-radius:14px;
- color:#9cbdfd;
- padding:22px;
- text-align:center;
- font-size:17px;
- line-height:1.8;
-}
-.login{
- display:flex;
- direction:ltr;
- margin-top:25px;
- border:2px solid #303441;
- border-radius:14px;
- overflow:hidden;
- background:#20242f;
-}
-.prefix{
- padding:20px;
- background:#292f40;
- color:#619bff;
- font-size:20px;
- letter-spacing:2px;
-}
-input{
- min-width:0;
- flex:1;
- border:0;
- outline:0;
- background:transparent;
- color:white;
- padding:18px;
- font-size:18px;
-}
-button{
- cursor:pointer;
- font-family:inherit;
-}
-.connect{
- width:100%;
- margin-top:35px;
- padding:20px;
- border:0;
- border-radius:13px;
- background:linear-gradient(110deg,#4c91f5,#8056ff);
- color:white;
- font-size:23px;
- font-weight:bold;
- box-shadow:0 10px 30px #496cff33;
-}
-.connect:active{transform:scale(.98)}
-hr{
- border:0;
- border-top:1px solid #30333c;
- margin:35px 0 25px;
-}
-h2{
- text-align:center;
- color:#7d8190;
- font-size:16px;
- letter-spacing:3px;
- margin-bottom:25px;
-}
-.plan{
- background:#20232e;
- border:2px solid #303441;
- border-radius:20px;
- padding:25px 18px;
- display:flex;
- align-items:center;
- gap:15px;
- direction:ltr;
- min-height:135px;
-}
-.wifi{
- background:#1d393d;
- padding:17px;
- border-radius:16px;
- font-size:29px;
-}
-.info{flex:1}
-.info strong{font-size:23px}
-.info p{
- margin:6px 0 0;
- color:#a3a7b4;
- line-height:1.5;
-}
-.price{
- color:#648cff;
- font-size:24px;
- font-weight:bold;
- white-space:nowrap;
-}
-.price small{font-size:13px}
-.nav{
- display:flex;
- justify-content:space-between;
- align-items:center;
- margin-top:18px;
-}
-.arrow{
- background:#20232d;
- color:#a9b0c2;
- border:1px solid #383d4a;
- border-radius:10px;
- width:43px;
- height:43px;
- font-size:25px;
-}
-.dots{display:flex;gap:7px}
-.dot{
- width:9px;height:9px;
- border-radius:50%;
- background:#303645;
-}
-.dot.active{background:#4d91ff}
-#message{
- text-align:center;
- margin-top:15px;
- font-size:14px;
- min-height:20px;
-}
-@media(max-width:480px){
- .wrap{margin:35px 15px;padding:30px 20px}
- .plan{padding:20px 12px;gap:10px}
- .price{font-size:21px}
-}
+body{margin:0;min-height:100vh;padding:22px 14px;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at top,#164b6b,#061626 70%);color:#f2f8ff;font-family:Tahoma,Arial,sans-serif}
+.app{width:100%;max-width:420px}
+.brand{text-align:center;margin-bottom:20px}
+.logo{width:76px;height:76px;margin:0 auto 12px;border-radius:24px;display:grid;place-items:center;font-size:40px;color:#062033;background:linear-gradient(135deg,#35d7f2,#43e39a)}
+h1{margin:0;font-size:25px}
+.subtitle{color:#a9c0d4;font-size:13px}
+.card{padding:22px;border:1px solid #2b526e;border-radius:22px;background:linear-gradient(160deg,#102d47,#091e31);box-shadow:0 20px 55px #0005}
+.status{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:13px;margin-bottom:22px;border:1px solid #234761;border-radius:14px;background:#071b2b}
+.small{font-size:12px;color:#a9c0d4;margin-bottom:6px}
+.speed{font-size:12px;color:#35d7f2;white-space:nowrap}
+label{display:block;font-weight:bold;font-size:14px;margin-bottom:9px}
+.field{display:flex;align-items:center;gap:8px;padding:5px 11px;border:1px solid #315772;border-radius:13px;background:#061a2b}
+.field:focus-within{border-color:#35d7f2}
+input{width:100%;min-width:0;padding:12px 3px;border:0;outline:0;background:transparent;color:white;font:15px Tahoma;direction:ltr;text-align:left;text-transform:uppercase}
+input::placeholder{color:#7894aa}
+button{width:100%;margin-top:14px;padding:14px;border:0;border-radius:13px;background:linear-gradient(90deg,#35d7f2,#43e39a);color:#062033;font:bold 16px Tahoma;cursor:pointer}
+.message{display:none;margin-top:14px;padding:12px;border-radius:12px;text-align:center;font-size:13px;line-height:1.9}
+.message.show{display:block}
+.success{color:#7af0b5;background:#0b3a32;border:1px solid #237a61}
+.error{color:#ffaaaa;background:#401e2a;border:1px solid #824052}
+.hint{font-size:12px;line-height:1.9;color:#a9c0d4}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:16px}
+.feature{padding:12px 4px;text-align:center;border:1px solid #1f4058;border-radius:12px;background:#0b2135;font-size:12px;color:#a9c0d4}
+.feature b{display:block;font-size:20px;margin-bottom:6px}
+footer{text-align:center;color:#7894aa;font-size:11px;line-height:1.9;margin-top:18px}
 </style>
 </head>
 <body>
-
-<div class="wrap">
-<h1>Kamal Hotspot</h1>
-
-<div class="notice">
-Please log in to use the hotspot service.
+<main class="app">
+<header class="brand">
+<div class="logo">⌁</div>
+<h1>کمال هات‌اسپات</h1>
+<p class="subtitle">به شبکه وای‌فای کمال خوش آمدید</p>
+</header>
+<section class="card">
+<div class="status">
+<div><div class="small">وضعیت صفحه</div><b>آماده دریافت کد</b></div>
+<div class="speed">سرعت نمایشی: ۳ Mbps</div>
 </div>
-
-<div class="login">
- <div class="prefix">AVK-</div>
- <input id="userId"
- placeholder="Enter your ID"
- autocomplete="off">
+<form id="connectForm">
+<label for="wifiCode">کد وای‌فای را وارد کنید</label>
+<div class="field">
+<span>🔐</span>
+<input id="wifiCode" type="text" placeholder="مثلاً KAMAL-7A2K" maxlength="24" autocomplete="off" required>
 </div>
-
-<button class="connect" onclick="connect()">
-Connect
-</button>
-
-<div id="message"></div>
-
-<hr>
-
-<h2>AVAILABLE PLANS</h2>
-
-<div class="plan">
- <div class="wifi">📶</div>
- <div class="info">
-  <strong id="planName">3 GB</strong>
-  <p id="planDetails">3 Mbps · Valid 30 days</p>
- </div>
- <div class="price" id="planPrice">
-  60<small> AFN</small>
- </div>
+<button type="submit">بررسی کد و اتصال</button>
+<div id="message" class="message" role="status" aria-live="polite"></div>
+</form>
+<p class="hint">کد را دقیق وارد کنید. فقط کدهای ثبت‌شده پذیرفته می‌شوند.</p>
+<div class="features">
+<div class="feature"><b>📶</b>وای‌فای</div>
+<div class="feature"><b>🔐</b>بررسی کد</div>
+<div class="feature"><b>⚡</b>۳ Mbps</div>
 </div>
-
-<div class="nav">
- <button class="arrow" onclick="nextPlan()">❯</button>
- <div class="dots" id="dots"></div>
- <button class="arrow" onclick="prevPlan()">❮</button>
-</div>
-</div>
-
+</section>
+<footer>کمال هات‌اسپات<br>برای اتصال واقعی اینترنت، سیستم هات‌اسپات باید به روتر یا سرور وصل باشد.</footer>
+</main>
 <script>
-const plans=[
- {name:"1 GB",speed:"3 Mbps",days:7,price:25},
- {name:"3 GB",speed:"3 Mbps",days:30,price:60},
- {name:"10 GB",speed:"3 Mbps",days:30,price:200},
- {name:"20 GB",speed:"3 Mbps",days:30,price:350}
-];
+const validCodes = new Set([
+"KAMAL-7A2K","KAMAL-9B4M","KAMAL-3C8N","KAMAL-5D1P",
+"KAMAL-6E7R","KAMAL-2F9T","KAMAL-8G3W","KAMAL-4H6X",
+"KAMAL-1J5Y","KAMAL-7L2Z","WIFI-A82K","WIFI-B93M",
+"WIFI-C14N","WIFI-D65P","WIFI-E27R","WIFI-F38T",
+"WIFI-G49W","WIFI-H51X","WIFI-J72Y","WIFI-K84Z"
+]);
+const form=document.getElementById("connectForm");
+const input=document.getElementById("wifiCode");
+const message=document.getElementById("message");
 
-let current=1;
-
-function showPlan(){
- const p=plans[current];
- document.getElementById("planName").textContent=p.name;
- document.getElementById("planDetails").textContent=
- p.speed+" · Valid "+p.days+" days";
- document.getElementById("planPrice").innerHTML=
- p.price+"<small> AFN</small>";
-
- document.getElementById("dots").innerHTML=
- plans.map((_,i)=>
- '<span class="dot '+(i===current?'active':'')+'"></span>'
- ).join("");
-}
-
-function nextPlan(){
- current=(current+1)%plans.length;
- showPlan();
-}
-
-function prevPlan(){
- current=(current-1+plans.length)%plans.length;
- showPlan();
-}
-
-function connect(){
- const id=document.getElementById("userId").value.trim();
- const msg=document.getElementById("message");
-
- if(!/^[a-zA-Z0-9_-]+$/.test(id)){
-  msg.style.color="#ff7777";
-  msg.textContent="لطفاً کد معتبر خود را وارد کنید.";
-  return;
- }
-
- msg.style.color="#ffcb72";
- msg.textContent=
- "کد AVK-"+id+
- " دریافت شد. اتصال واقعی هنوز فعال نیست.";
-}
-
-showPlan();
+form.addEventListener("submit",function(event){
+  event.preventDefault();
+  const code=input.value.trim().toUpperCase();
+  message.className="message show";
+  if(!code){
+    message.classList.add("error");
+    message.textContent="لطفاً کد را وارد کنید.";
+  }else if(!validCodes.has(code)){
+    message.classList.add("error");
+    message.textContent="❌ کد نامعتبر است. دوباره بررسی کنید.";
+  }else{
+    message.classList.add("success");
+    message.textContent="✅ کد معتبر است؛ بررسی موفق بود. این پیام نمایشی است و اینترنت واقعی هنوز وصل نشده است.";
+  }
+});
 </script>
 </body>
 </html>
